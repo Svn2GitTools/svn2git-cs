@@ -1,6 +1,7 @@
 # svn2git-cs: A C# SVN to Git Migration Tool
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/v/release/Svn2GitTools/svn2git-cs)](https://github.com/Svn2GitTools/svn2git-cs/releases/latest)
 
 **svn2git-cs** is a command-line tool written in C# to migrate Subversion (SVN) repositories to Git. It's inspired by the original `svn2git` Ruby project and aims to provide a robust and user-friendly solution for SVN to Git conversion using the power of `git svn` under the hood.
 
@@ -20,7 +21,13 @@
 * **Branch Rebase:** Allows rebasing a specific branch from SVN into an existing Git repository.
 * **Repository Optimization:** Optimizes the Git repository after migration (using `git gc`).
 * **Verbose Output:** Provides detailed logging for debugging and monitoring the migration process.
-* **MIT Licensed:** Open-source and freely usable under the permissive MIT License.
+
+## Disadvantages
+- **Performance:** The migration process can be slow, especially for large SVN repositories with extensive histories. On my computer for 466 commits I need about 30mins
+- **Git History Accuracy:** While the tool aims to preserve history, there may be discrepancies or issues with the accuracy of the migrated Git history.
+- **Dependency on `git svn`:** Relies on `git svn`, which may have its own limitations and bugs that can affect the migration process.
+- **Platform Limitations:** Although written in C#, the tool may have limitations or require additional setup on non-Windows platforms.
+- **Manual Intervention:** Some aspects of the migration, such as authors mapping, may require manual intervention and adjustments.
 
 ## Getting Started
 
